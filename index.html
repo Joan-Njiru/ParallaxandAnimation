@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+    <title>Parallax and Animation</title>
+</head>
+<body>
+   <header>
+    <a href="#" class="logo">Happy Haven</a>
+    <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">More</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+   </header>
+   <section>
+    <h2 id="stories">Land of Children's Stories</h2>
+    <img src="images/dragon.png" alt="" id="dragon">
+    <img src="images/mountains.png" alt="" id="mountains">
+    <img src="images/cottage.png" alt="" id="cottage">
+    <button id="but">Explore</button>
+    <img src="images/butterfly2.png" alt="" id="butterfly2">
+    <img src="images/butterfly3.png" alt="" id="butterfly3">
+   </section>
+   
+
+   <script>
+    let mountains = document.getElementById("mountains");
+    let cottage = document.getElementById("cottage");
+    let butterfly2 = document.getElementById("butterfly2");
+    let butterfly3 = document.getElementById("butterfly3");
+    let but = document.getElementById("but");
+    let stories = document.getElementById("stories");
+
+    window.addEventListener('scroll', function(){
+        let value = window.scrollY;
+        // butterfly2.style.left = value * 1.5 + 'px';
+        butterfly3.style.top =  value * 1.8 + 'px';
+        butterfly2.style.top =  value * 1.8 + 'px';
+        stories.style.marginTop =  value * 2 + 'px';
+        dragon.style.left =  -value * 0.90 + 'px';
+        dragon.style.top =  -value * 1.8 + 'px';
+        // cottage.style.right = value * 2.25 + 'px';
+
+    })
+   </script>
+</body>
+</html>
